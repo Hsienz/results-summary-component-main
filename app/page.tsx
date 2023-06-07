@@ -1,91 +1,40 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+import SummaryElem from "@/components/SummaryElem";
+import data from "../public/data.json";
 
-const inter = Inter({ subsets: ['latin'] })
+const SummaryElemClassName = [
+	"bg-Light_red",
+	"bg-Orangey_yellow",
+	"bg-Green_teal",
+	"bg-Cobalt_blue",
+];
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	return (
+		<main className="flex h-screen">
+			<div className="flex m-auto overflow-hidden rounded-3xl bg-blue-50">
+				<div className="flex p-4 flex-col text-center rounded-[inherit] bg-gradient-to-b to-Light_royal_blue_background from-Light_slate_blue_background">
+					<p className="text-Pale_blue">Your Result</p>
+					<div className="w-32 m-auto rounded-full aspect-square to-Persian_blue_circle bg-gradient-to-b from-Violet_blue_circle"></div>
+					<p className="text-White">Great</p>
+					<p className="text-Pale_blue">
+						You scored higher than 65% of the people who have taken
+						these tests.
+					</p>
+				</div>
+				<div>
+					<p>Summary</p>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+					{data.map((x, i) => (
+						<SummaryElem
+							key={x.category}
+							className={SummaryElemClassName[i]}
+							{...x}
+						/>
+					))}
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+					<button>Continue</button>
+				</div>
+			</div>
+		</main>
+	);
 }

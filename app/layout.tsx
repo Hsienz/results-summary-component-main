@@ -1,7 +1,8 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Hanken_Grotesk } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+
+const hankenGrotesk = Hanken_Grotesk({subsets:['latin'],weight:["500","700","800"]})
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={hankenGrotesk.className}>{children}</body>
     </html>
   )
 }

@@ -18,7 +18,7 @@ const SummaryElemCategoryClassName = [
 export default function Home() {
 	return (
 		<main className="flex h-screen md:p-8 bg-Pale_blue">
-			<div className="text-lg font-medium flex mx-auto mb-auto md:my-auto md:flex-row flex-col md:w-[720px] overflow-hidden md:rounded-3xl rounded-b-3xl bg-White">
+			<div className="text-lg md:shadow-Light_lavender md:shadow-[10px_10px_10px_0px] font-medium flex mx-auto mb-auto md:my-auto md:flex-row flex-col md:w-[720px] overflow-hidden md:rounded-3xl rounded-b-3xl bg-White">
 				<div className="flex md:w-1/2 gap-4 px-12 py-10 flex-col text-center rounded-[inherit] bg-gradient-to-b to-Light_royal_blue_background from-Light_slate_blue_background">
 					<p className="text-2xl text-Pale_blue">Your Result</p>
 					<div className="relative w-40 m-auto rounded-full aspect-square to-Persian_blue_circle bg-gradient-to-b from-Violet_blue_circle">

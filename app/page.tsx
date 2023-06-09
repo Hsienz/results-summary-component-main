@@ -17,9 +17,9 @@ const SummaryElemCategoryClassName = [
 
 export default function Home() {
 	return (
-		<main className="flex h-screen bg-Pale_blue">
-			<div className="text-lg font-medium flex m-auto w-[720px] overflow-hidden rounded-3xl bg-White">
-				<div className="flex w-1/2 gap-4 px-12 py-10 flex-col text-center rounded-[inherit] bg-gradient-to-b to-Light_royal_blue_background from-Light_slate_blue_background">
+		<main className="flex h-screen md:p-8 bg-Pale_blue">
+			<div className="text-lg font-medium flex mx-auto mb-auto md:my-auto md:flex-row flex-col md:w-[720px] overflow-hidden md:rounded-3xl rounded-b-3xl bg-White">
+				<div className="flex md:w-1/2 gap-4 px-12 py-10 flex-col text-center rounded-[inherit] bg-gradient-to-b to-Light_royal_blue_background from-Light_slate_blue_background">
 					<p className="text-2xl text-Pale_blue">Your Result</p>
 					<div className="relative w-40 m-auto rounded-full aspect-square to-Persian_blue_circle bg-gradient-to-b from-Violet_blue_circle">
 						<div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full">
@@ -37,7 +37,7 @@ export default function Home() {
 						these tests.
 					</p>
 				</div>
-				<div className="flex flex-col justify-between w-1/2 gap-8 px-8 py-10">
+				<div className="flex flex-col justify-between gap-8 px-8 py-10 md:w-1/2">
 					<p className="text-2xl font-extrabold text-Dark_gray_blue">
 						Summary
 					</p>
